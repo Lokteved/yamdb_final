@@ -54,12 +54,12 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [IsAdmin]
     filter_backends = [filters.SearchFilter]
-    search_fields = ['user__username',]
+    search_fields = ['user__username', ]
     pagination_class = PageNumberPagination
     lookup_field = 'username'
 
-    @action(detail=False, 
-            methods=['get', 'patch'], 
+    @action(detail=False,
+            methods=['get', 'patch'],
             permission_classes=[IsAuthenticated])
     def me(self, request):
         username = request.user.username

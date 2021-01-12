@@ -53,7 +53,7 @@ class Title(models.Model):
         null=True,
         blank=True,
         verbose_name='Описание',
-        )
+    )
     category = models.ForeignKey(
         Category,
         verbose_name='Категория',
@@ -107,9 +107,9 @@ class Review(Publication):
         verbose_name='Оценка',
         validators=[
             MinValueValidator(1, message='Значение рейтинга,'
-                                         ' должно быть больше 1'),
-            MaxValueValidator(10,  message='Значение рейтинга,'
-                                           ' должно быть меньше или равно 10')]
+                                        ' должно быть больше 1'),
+            MaxValueValidator(10, message='Значение рейтинга,'
+                                        ' должно быть меньше или равно 10')]
     )
 
     class Meta:

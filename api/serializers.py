@@ -3,7 +3,7 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.fields import CurrentUserDefault
 
 
-from .models import User,  Category, Genre, Title, Comments, Review
+from .models import User, Category, Genre, Title, Comments, Review
 
 
 class EmailSerializer(serializers.ModelSerializer):
