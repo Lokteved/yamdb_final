@@ -4,6 +4,8 @@ This is a [Docker][] setup for a web application based on Django.
 - The [Django][] application is served by [Gunicorn][] (WSGI application).
 - [Postgres][] database is used.
 
+[![CI Status](https://github.com/Lokteved/yamdb_final/workflows/Yamdb%20workflow/badge.svg)
+
 ## Requirements
 You need to install [Docker][] and [Docker-Compose][].
 

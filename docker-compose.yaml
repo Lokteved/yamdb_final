@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 
 volumes:
   postgres_data:
@@ -23,8 +23,11 @@ services:
   nginx:
     image: nginx:1.19.6
     volumes:
+      - ./nginx:/defaultnginx.conf
       - staticfiles:/static
     ports:
       - 80:80
+    links:
+      - web:web
     depends_on:
       - web
