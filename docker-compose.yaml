@@ -1,0 +1,30 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+  staticfiles:
+
+services:
+  db:
+    image: postgres:12.4
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+  web:
+    image: lokteved/yamdb
+    restart: always
+    ports:
+      - "8000:8000" 
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+  nginx:
+    image: nginx:1.19.6
+    volumes:
+      - staticfiles:/static
+    ports:
+      - 80:80
+    depends_on:
+      - web
